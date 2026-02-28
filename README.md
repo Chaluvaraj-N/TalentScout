@@ -4,7 +4,8 @@
 
 **TalentScout** is an AI-powered Hiring Assistant Chatbot developed using Streamlit and OpenAI's GPT models. This intelligent chatbot streamlines the initial candidate screening process by collecting candidate information and asking relevant technical questions based on their tech stack.
 
-### Key Features
+Key Features
+
 - 🤖 **AI-Powered**: Uses OpenAI GPT-3.5 for intelligent question generation
 - 📝 **Sequential Data Collection**: Collects candidate information in a structured flow
 - 💻 **Technical Assessment**: Generates relevant technical questions based on candidate's tech stack
@@ -12,8 +13,7 @@
 - 📊 **Real-time Progress Tracking**: Visual progress indicator for collection steps
 
 
-
-## 🏗️ Project Architecture
+🏗️ Project Architecture
 
 ### Technology Stack
 | Component | Technology |
@@ -23,8 +23,9 @@
 | Backend | Python |
 | Environment | python-dotenv |
 
-### File Structure
-```
+
+File Structure
+
 AIML/
 ├── app.py              # Main Streamlit application
 ├── requirements.txt    # Python dependencies
@@ -33,34 +34,37 @@ AIML/
 ├── .env               # Environment variables (API keys)
 └── candidate_info.json # Stored candidate data
 
-### Dependencies
+
+Dependencies
+
 streamlit>=1.28.0
 openai>=1.3.0
 python-dotenv>=1.0.0
 
 
-## 🚀 How to Run
+🚀 How to Run
 
-### 1. Install Dependencies
+1. Install Dependencies
 bash
 pip install -r requirements.txt
 
-### 2. Configure Environment Variables
+2. Configure Environment Variables
 Create a `.env` file in the project root:
 
 env
 OPENAI_API_KEY=your_openai_api_key_here
 
-### 3. Run the Application
+3. Run the Application
 
 bash
 streamlit run app.py
 
 The application will open in your default web browser at `http://localhost:8501`.
 
-## 💡 Functionality Overview
 
-### 1. Information Collection Flow
+💡 Functionality Overview
+
+1. Information Collection Flow
 The chatbot collects candidate information in the following sequence:
 1. **Full Name** - Validates alphabetic input
 2. **Email Address** - Validates email format
@@ -70,23 +74,24 @@ The chatbot collects candidate information in the following sequence:
 6. **Current Location** - Non-empty string
 7. **Tech Stack** - Comma-separated technologies (e.g., "Python, Django, React")
 
-### 2. Technical Question Generation
+2. Technical Question Generation
 - Uses OpenAI GPT-3.5 to generate 3-5 relevant technical questions per technology
 - Falls back to predefined question bank if API is unavailable
 - Questions are intermediate level and role-appropriate
 
-### 3. Conversation Management
+3. Conversation Management
 - **Exit Keywords**: "exit", "quit", "bye", "thank you", "that's all", "done", "goodbye"
 - **Restart**: Users can restart the conversation at any time
 - **Fallback Handling**: Graceful handling of irrelevant inputs
 
-### 4. Data Persistence
+4. Data Persistence
 - Candidate information is saved to `candidate_info.json`
 - Maintains conversation history in session state
 
-## 🎨 UI/UX Design
 
-### Color Scheme
+🎨 UI/UX Design
+
+Color Scheme
 | Element | Color |
 |---------|-------|
 | Primary | #1E3A5F (Deep Navy Blue) |
@@ -95,7 +100,7 @@ The chatbot collects candidate information in the following sequence:
 | Bot Message | #E3F2FD (Light Blue) |
 | User Message | #FFF3E0 (Light Orange) |
 
-### Components
+Components
 - **Welcome Banner**: Company branding with gradient header
 - **Chat Messages**: Differentiated user/bot message bubbles
 - **Progress Indicator**: Visual step tracker
@@ -109,9 +114,9 @@ The chatbot collects candidate information in the following sequence:
 - Subtle shadows
 
 
-## 🔧 Key Implementation Details
+🔧 Key Implementation Details
 
-### Session State Management
+Session State Management
 The application uses Streamlit's session_state to maintain:
 - `conversation_history`: All chat messages
 - `candidate_info`: Collected candidate data
@@ -121,18 +126,18 @@ The application uses Streamlit's session_state to maintain:
 - `current_tech_index`: Current technology being assessed
 - `conversation_started`: Boolean flag for conversation state
 
-### Validation Functions
+Validation Functions
 - `validate_email()`: Regex-based email validation
 - `validate_phone()`: Phone digit extraction and count
 - `validate_experience()`: Numeric range validation (0-30)
 - `parse_tech_stack()`: Comma-separated parsing with trimming
 
-### LLM Integration
+LLM Integration
 - Primary: OpenAI GPT-3.5 Turbo API
 - Fallback: Predefined question bank for common technologies
 - Technologies covered in fallback: Python, Django, React, JavaScript, MySQL, SQL, HTML, CSS, Java, Node.js, TypeScript
 
-## 📝 Sample Conversation Flow
+📝 Sample Conversation Flow
 
 TalentScout: 👋 Welcome to TalentScout! I'm your AI-powered hiring assistant...
 TalentScout: What's your full name?
@@ -149,7 +154,7 @@ TalentScout: Python Questions:
 1. Explain the difference between list and tuple in Python.
 2. What are Python decorators and how do you use them?
 
-## ✅ Acceptance Criteria Met
+✅ Acceptance Criteria Met
 
 - [x] Welcome message displays on app start
 - [x] All 7 fields collected in sequence with validation
@@ -160,12 +165,12 @@ TalentScout: Python Questions:
 - [x] Professional closing message with candidate name
 - [x] Responsive chat interface with professional styling
 
-## 📄 License
+📄 License
 
 This project is for demonstration and educational purposes.
 
 
-## 👨‍💻 Author
+👨‍💻 Author
 
 TalentScout - AI Hiring Assistant
 
