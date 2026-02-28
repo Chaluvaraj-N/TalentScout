@@ -28,10 +28,15 @@ File Structure
 
 AIML/
 ├── app.py              # Main Streamlit application
+
 ├── requirements.txt    # Python dependencies
+
 ├── SPEC.md            # Project specification
+
 ├── README.md          # Project documentation
+
 ├── .env               # Environment variables (API keys)
+
 └── candidate_info.json # Stored candidate data
 
 
