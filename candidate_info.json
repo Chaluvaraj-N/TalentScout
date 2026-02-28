@@ -1,0 +1,107 @@
+[
+  {
+    "name": "chaluvaraj.N"
+  },
+  {
+    "name": "chaluvaraj.N"
+  },
+  {
+    "name": "chaluvaraj N"
+  },
+  {
+    "name": "chaluvaraj.N"
+  },
+  {
+    "name": "chaluvaraj.N",
+    "email": "chaluvashetty23@gmail.com"
+  },
+  {
+    "name": "chaluvaraj.N",
+    "email": "chaluvashetty23@gmail.com",
+    "phone": "7899663405"
+  },
+  {
+    "name": "chaluvaraj.N",
+    "email": "chaluvashetty23@gmail.com",
+    "phone": "7899663405",
+    "experience": "2"
+  },
+  {
+    "name": "chaluvaraj.N",
+    "email": "chaluvashetty23@gmail.com",
+    "phone": "7899663405",
+    "experience": "2",
+    "position": "software engineer "
+  },
+  {
+    "name": "chaluvaraj.N",
+    "email": "chaluvashetty23@gmail.com",
+    "phone": "7899663405",
+    "experience": "2",
+    "position": "software engineer ",
+    "location": "bengaluru"
+  },
+  {
+    "name": "chaluvaraj.N",
+    "email": "chaluvashetty23@gmail.com",
+    "phone": "7899663405",
+    "experience": "2",
+    "position": "software engineer ",
+    "location": "bengaluru",
+    "tech_stack_list": [
+      "Python",
+      "Django",
+      "React",
+      "MySQL"
+    ],
+    "tech_stack": "Python, Django, React, MySQL"
+  },
+  {
+    "name": "chaluvaraj.N",
+    "email": "chaluvashetty23@gmail.com",
+    "phone": "7899663405",
+    "experience": "2",
+    "position": "software engineer ",
+    "location": "bengaluru",
+    "tech_stack_list": [
+      "next"
+    ],
+    "tech_stack": "next"
+  },
+  {
+    "name": "chaluvaraj.N",
+    "email": "chaluvashetty23@gmail.com",
+    "phone": "7899663405",
+    "experience": "2",
+    "position": "software engineer ",
+    "location": "bengaluru",
+    "tech_stack_list": [
+      "skip"
+    ],
+    "tech_stack": "skip"
+  },
+  {
+    "name": "chaluvaraj.N",
+    "email": "chaluvashetty23@gmail.com",
+    "phone": "7899663405",
+    "experience": "2",
+    "position": "software engineer ",
+    "location": "bengaluru",
+    "tech_stack_list": [
+      "skip"
+    ],
+    "tech_stack": "skip"
+  },
+  {
+    "name": "chaluvaraj.N",
+    "email": "chaluvashetty23@gmail.com",
+    "phone": "7899663405",
+    "experience": "2",
+    "position": "software engineer ",
+    "location": "bengaluru",
+    "tech_stack_list": [
+      "next"
+    ],
+    "tech_stack": "next"
+  }
+]
