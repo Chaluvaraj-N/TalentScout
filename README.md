@@ -246,10 +246,8 @@ When API fails or response is unclear:
 
 talentscout/
 ├── app.py
-├── prompts.py
+├── candidate_info
 ├── requirements.txt
-├── .env
-├── .gitignore
 └── README.md
 
 
