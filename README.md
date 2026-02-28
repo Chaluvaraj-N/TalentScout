@@ -1,280 +1,302 @@
-👔 TalentScout – AI-Powered Hiring Assistant Chatbot
+👔 TalentScout - AI-Powered Hiring Assistant Chatbot
 
-TalentScout is an intelligent AI-powered chatbot built using Python, Streamlit, and Large Language Models (LLMs) that automates the initial candidate screening process for technical roles.
-
-Unlike traditional fixed-question systems, TalentScout dynamically generates 3–5 tailored technical interview questions per technology based on the candidate’s declared tech stack.
+TalentScout is an intelligent AI-powered chatbot built using Python and Streamlit that automates the initial screening process for technical positions. It collects candidate information, dynamically analyzes tech stacks, and generates tailored technical interview questions using Large Language Models (LLMs).
 
 📋 Project Overview
 
-TalentScout is designed to streamline and modernize the initial hiring workflow by:
+TalentScout is designed to streamline the initial hiring process by:
 
-🤖 Automating candidate screening
+1. Automating candidate screening – Collects structured information without human intervention
 
-🧠 Dynamically generating tech-specific interview questions
+2. Dynamically generating technical questions – Uses LLM to create 3–5 relevant questions per technology
 
-📊 Maintaining context-aware conversations
+3. Maintaining conversational context – Uses session state to preserve candidate details
 
-🔐 Handling candidate data securely within session
-
-💼 Delivering a professional recruiter-like experience
+4. Providing professional experience – Clean UI with structured multi-step interaction
+   
 
 ⭐ Key Capabilities
-🔄 Multi-Step Intelligent Conversation Flow
 
-Greeting → Information Collection → Tech Stack Analysis → Dynamic Technical Questions → Graceful Exit
+1. Multi-step conversation flow (Greeting → Info Collection → Tech Stack → Dynamic Technical Questions → End)
 
-🧾 Structured Candidate Data Collection
+2. Dynamic LLM-based question generation (No fixed hardcoded questions)
 
-Full Name
+3. Context retention using Streamlit session_state
 
-Email Address (validated)
+4. Structured and formatted technical questions
 
-Phone Number
+5. Fallback handling for unclear input
 
-Years of Experience
+6. Exit handling with professional closing
 
-Desired Position
+7. Session-based candidate data handling
 
-Current Location
-
-Tech Stack
-
-🧠 Dynamic Technical Question Generation
-
-3–5 questions per technology
-
-Medium-level difficulty
-
-Technology-specific
-
-No generic or irrelevant questions
-
-💬 Context Retention
-
-Uses Streamlit session_state
-
-Maintains full conversation history
-
-Handles follow-ups smoothly
-
-🛑 Smart Exit Handling
-
-Recognizes:
-
-exit, quit, bye, thank you, stop, end
-
-Ends conversation professionally.
 
 🚀 Installation Steps
-🔹 Prerequisites
+Prerequisites
 
-Python 3.8 or higher
+1. Python 3.8 or higher
 
-OpenAI API Key
+2. OpenAI API key
 
-🔹 Step-by-Step Installation
-1️⃣ Clone the Repository
-git clone https://github.com/your-username/talentscout-chatbot.git
-cd talentscout-chatbot
-2️⃣ Install Dependencies
-pip install -r requirements.txt
-3️⃣ Set Environment Variables
+Step-by-Step Installation
+1. Clone or download the project files
 
-Create .env file:
+    git clone <repository-url>
+    cd talentscout
 
-OPENAI_API_KEY=your_actual_api_key_here
-4️⃣ Run the Application
-streamlit run app.py
+2. Install dependencies
 
-The app runs at:
+    pip install -r requirements.txt
 
-http://localhost:8501
+3. Set up environment variables
+
+    Create a .env file and add:
+
+    OPENAI_API_KEY=your_actual_api_key_here
+
+4. Run the application
+
+    streamlit run app.py
+
+5. Open your browser
+
+    The app will automatically open at:
+    http://localhost:8501
+
+Or check the terminal for the exact URL.
+
+
 📖 Usage Instructions
-👤 For Candidates
+For Candidates
+1. Start the conversation
 
-1️⃣ The chatbot greets you automatically
+The bot greets you automatically.
 
-2️⃣ Provide information step-by-step:
+2. Provide personal information (one-by-one):
 
-Full Name
+. Full Name
 
-Email
+. Email Address (validated)
 
-Phone
+. Phone Number (validated)
 
-Experience
+. Years of Experience
 
-Desired Role
+. Desired Position
 
-Location
+. Current Location
 
-3️⃣ Enter your Tech Stack (comma-separated):
+3. Enter your tech stack (comma-separated format)
 
-Example:
-
+. Example:
 Python, Django, PostgreSQL, Docker
 
-4️⃣ The AI generates technical questions for EACH technology
+. Example:
+React, Node.js, MongoDB, AWS
 
-5️⃣ Answer the questions
+4. Answer dynamically generated technical questions
 
-6️⃣ The chatbot ends with:
+. 3–5 questions per technology
 
-"Thank you for your time. Our team will review your responses and contact you soon."
+. Medium-level difficulty
+
+. No answers shown
+
+. Professionally formatted
+
+5. Complete the screening
+
+After the questions, you will see:
+
+"Thank you for your time. Our recruitment team will review your responses and contact you soon."
+
+
+🛑 Exit Commands
+
+Type any of these to end the conversation immediately:
+
+exit, quit, bye, goodbye, stop, end
+
 
 🧠 Prompt Design Explanation
+Dynamic Question Generation (LLM-Based)
 
-This project heavily focuses on Prompt Engineering, which is 30% of the evaluation criteria.
+The system uses an OpenAI GPT model to generate tailored technical questions.
 
-🔹 Information Gathering Prompt
+Example prompt structure:
 
-Designed to:
-
-Ask only one question at a time
-
-Maintain context
-
-Avoid deviation from hiring purpose
-
-Handle unclear responses
-
-🔹 Technical Question Generation Prompt
-
-Example structure:
-
-TECH_PROMPT = """
 You are a senior technical interviewer.
-
-Based on the tech stack: {tech_stack}
-
-Generate 3-5 medium-level technical interview questions per technology.
+Based on the following tech stack: {tech_stack}
+Generate 3–5 medium-level technical interview questions per technology.
 Do not provide answers.
 Format clearly under each technology.
-"""
-🎯 Why This Works:
 
-Role-based prompting
+Design Principles
 
-Clear formatting instructions
+. Role-based prompting
 
-Difficulty control
+. Structured formatting
 
-Structured output enforcement
+. Controlled difficulty
 
-🔹 Fallback Prompt Strategy
+. Domain restriction to hiring context
 
-If input is unclear:
+. Prevention of irrelevant responses
 
-Politely redirect conversation
-
-Stay within hiring context
-
-Avoid unrelated answers
 
 🏗️ Technical Decisions
-1️⃣ Streamlit for UI
+1. Streamlit for UI
 
-✔ Rapid development
-✔ Built-in session management
-✔ Ideal for chat-based apps
+Decision: Used Streamlit instead of Flask/Django
 
-2️⃣ LLM for Dynamic Question Generation
+Rationale:
 
-✔ Handles diverse tech stacks
-✔ No hardcoded questions
-✔ Scalable for unlimited technologies
-✔ More realistic interview simulation
+. Rapid development
 
-3️⃣ Session-Based Storage
+. Built-in session state management
 
-✔ No external database
-✔ Data persists during session only
-✔ GDPR-conscious design
-✔ No permanent sensitive storage
+. Automatic UI rendering
 
-4️⃣ Modular Prompt Design
+. Ideal for chatbot-style applications
 
-Separated prompts for:
+2. Session State Management
 
-Info collection
+Decision: Used Streamlit's session_state instead of external database
 
-Technical generation
+Rationale:
 
-Fallback handling
+. No database setup required
 
-Improves maintainability and clarity.
+. Fast conversation memory
+
+. Simplified local deployment
+
+. Data exists only during session
+
+3. Dynamic Questions vs Fixed Questions
+
+Decision: Used LLM-generated dynamic questions
+
+Rationale:
+
+. Supports unlimited tech stacks
+
+. More realistic interview simulation
+
+. No need to manually maintain question sets
+
+. Scalable architecture
+
+4. Environment-Based API Key Management
+
+Decision: Store API key in .env file
+
+Rationale:
+
+. Prevents hardcoding secrets
+
+. Secure configuration management
+
+. Follows best practices
+
 
 🚧 Challenges Faced
-1. Maintaining Context
+1. Maintaining Conversation Context
 
-Problem: LLM forgetting earlier details
-Solution: Stored conversation in session_state
+Problem: LLM forgetting earlier candidate details
+Solution: Stored conversation and user data inside session_state
 
 2. Off-Topic Responses
 
-Problem: Model drifting from hiring process
-Solution: Strong role-based system prompts
+Problem: Model generating unrelated responses
+Solution: Strengthened system prompt and domain restrictions
 
-3. Diverse Tech Stacks
+3. Formatting Inconsistencies
 
-Problem: Handling unlimited technologies
-Solution: Dynamic prompt template with tech substitution
+Problem: Questions not formatted uniformly
+Solution: Enforced structured formatting rules inside prompt
 
-4. Exit Handling
+4. API Failure Handling
 
-Problem: Abrupt conversation termination
-Solution: Implemented keyword-based graceful closing
+Problem: Application crashes when API fails
+Solution: Added error handling and fallback messaging
+
 
 🤖 Model Details
 
-Model Used: GPT-based LLM
-Temperature: 0.6–0.7 (balanced creativity & structure)
+Model: GPT-3.5-turbo (or GPT-4 compatible)
+Temperature: 0.6–0.7
 Max Tokens: 500
+Use Case: Dynamic technical question generation
 
-Prompt Format:
-messages = [
-    {"role": "system", "content": "You are an AI Hiring Assistant for TalentScout."},
-    {"role": "user", "content": user_input}
-]
+
+🔄 Fallback Strategy
+
+When API fails or response is unclear:
+
+. Displays professional fallback message
+
+. Redirects to hiring-focused conversation
+
+. Prevents system crash
+
+
 📁 Project Structure
-talentscout-chatbot/
+
+talentscout/
 ├── app.py
 ├── prompts.py
-├── utils.py
 ├── requirements.txt
 ├── .env
 ├── .gitignore
 └── README.md
+
+
 🔒 Security Notes
 
-API key stored in .env
+. API keys stored in .env
 
-.env added to .gitignore
+. .env added to .gitignore
 
-No permanent candidate data storage
+. No permanent candidate data storage
 
-Session-based information handling
+. Session-based information handling
 
-📝 Sample Data Output (Session Simulation)
+. No external data storage
+
+
+🐛 Troubleshooting
+
+Issue: "OpenAI API Key not configured!"
+Solution: Create .env file and add your API key
+
+Issue: "Error generating questions"
+Solution: Check internet connection or API credits
+
+Issue: Module not found errors
+Solution: Run pip install -r requirements.txt
+
+Issue: Unexpected responses
+Solution: Verify prompt formatting
+
+
+📝 Output Format (Session Data Example)
+
 {
-  "full_name": "John Doe",
-  "email": "john@example.com",
-  "phone": "+91-9876543210",
-  "years_experience": "4",
-  "desired_position": "Backend Developer",
-  "tech_stack": ["Python", "Django"]
+"candidate_info": {
+"full_name": "John Doe",
+"email": "john@example.com
+",
+"phone": "+91-9876543210",
+"years_experience": "4",
+"desired_position": "Backend Developer",
+"current_location": "Bangalore, India",
+"tech_stack": ["Python", "Django"]
 }
-🏆 Why This Project Stands Out
-
-Demonstrates practical LLM application
-
-Strong prompt engineering focus
-
-Clean UI and user experience
-
-Context-aware conversational AI
-
-Recruiter-ready simulation
+}
 
 
-happy hiring😊 
+🙏 Acknowledgments
+
+Built with Streamlit, OpenAI API, and Python.
